@@ -4,7 +4,7 @@ export default function TransactionCard ({date, category, amount, description}) 
     return (
         <div className="transaction border border-cyan-500 p-6 rounded-xl">
             <div className="details flex flex-row justify-around p-4">
-                <div className="py-2 px-8 rounded-xl bg-green-500 text-white">₹{amount || 100}</div>
+                <div className="py-2 px-8 rounded-xl bg-green-500 text-white">₹{amount}</div>
                 <div className="py-2 px-8 bg-gradient-to-br from-zinc-950 to-zinc-700 rounded-xl text-white">{category || "here"}</div>
                 <div className="py-2 px-8 rounded-xl text-white bg-sky-600">{formattedDate || "now"}</div>
             </div>
