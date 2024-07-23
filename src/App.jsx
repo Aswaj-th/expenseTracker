@@ -7,7 +7,7 @@ function App() {
 	const [balance, setBalance] = useState(1000);
 	const [transactions, setTransactions] = useState([{
 		amount: 100,
-		expenditure: true,
+		expenditure: 'true',
 		category: "Home",
 		date: Date.now(),
 		description: "Electricity bill"
@@ -20,15 +20,21 @@ function App() {
 
 	const handleAddition = (e, data) => {
 		e.preventDefault();
+		console.log(data);
 		if(data.amount < 1 || !data.description) {
 			alert("erorr in amount or description field")
 			return;
 		}
 		data.date = Date.now();
-		localStorage.setItem('transactions', [...transactions, data])
+		localStorage.setItem('transactions', JSON.stringify([...transactions, data]))
 		setTransactions([...transactions, data])
-		if(data.expenditure) setBalance(balance-data.amount);
-		else setBalance(balance+data.amount);
+		if(data.expenditure === 'true') {
+			localStorage.setItem('balance', Number(balance-data.amount));
+			setBalance(Number(balance-data.amount));
+		} else {
+			localStorage.setItem('balance', balance+Number(data.amount));
+			setBalance(balance+Number(data.amount));
+		}
 		formRef.current.classList.add("-z-10");
 	}
 
@@ -39,17 +45,13 @@ function App() {
 
 	useEffect(() => {
 		if(!localStorage.getItem('transactions')) return
-		setTransactions(localStorage.getItem('transactions'))
+		setTransactions(JSON.parse(localStorage.getItem('transactions')))
 	}, [])
 
 	useEffect(() => {
 		if(!localStorage.getItem('balance')) return
-		setBalance(localStorage.getItem('balance'))
+		setBalance(Number(localStorage.getItem('balance')))
 	}, [])
-
-	useEffect(() => {
-		localStorage.setItem('balance', balance);
-	}, [balance])
 
 	return (
 		<>

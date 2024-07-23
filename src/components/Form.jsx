@@ -3,8 +3,8 @@ import { useState } from "react";
 export default function Form ({refDupe, handleAddition, handleExit}) {
     const [data, setData] = useState({
         amount: 0,
-        expenditure: true,
-        category: "shopping",
+        expenditure: 'true',
+        category: "Shopping",
         description: "",
         date: null
     });
@@ -49,12 +49,13 @@ export default function Form ({refDupe, handleAddition, handleExit}) {
                             })
                         }
                     } className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required>
-                        <option value="shopping">shopping</option>
-                        <option value="transportation">transportation</option>
-                        <option value="food">food</option>
-                        <option value="entertainment">entertainment</option>
-                        <option value="home">home</option>
-                        <option value="salary">salary</option>
+                        <option value="Shopping">Shopping</option>
+                        <option value="Transportation">Transportation</option>
+                        <option value="Food">Food</option>
+                        <option value="Entertainment">Entertainment</option>
+                        <option value="Home">Home</option>
+                        <option value="Salary">Salary</option>
+                        <option value="Others">Others</option>
                     </select>
                 </div>
                 <div className="mb-5">
