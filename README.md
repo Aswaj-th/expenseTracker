@@ -1,8 +1,13 @@
-# React + Vite
+# Expense Tracker
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
+- The User can add transactions to the tracker with details like amount, category,
+description and whether it is income or expenditure.
+- The User can view their balance.
+- The User can see the total income and expenditure, providing an overview of
+their financial habits.
+- The User can view all of their past transactions and delete any of them in case
+the data entered was incorrect.
+- The transactions can be filtered based on income or expenditure.
+- localStorage is implemented to save the transactions and balance across
+multiple user sessions.
