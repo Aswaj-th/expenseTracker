@@ -10,7 +10,7 @@ export default function Form ({refDupe, handleAddition, handleExit}) {
     });
 
     return (
-        <div ref={refDupe} className="form fixed w-1/2 -translate-y-1/2 -translate-x-1/2 top-1/2 left-1/2 bg-blue-950 -z-10 rounded-xl">
+        <div ref={refDupe} className="form fixed w-1/2 -translate-y-1/2 -translate-x-1/2 top-1/2 left-1/2 bg-palette-300 -z-10 rounded-xl">
             <h3 className="pt-5 text-white text-4xl">Transaction Details</h3>
             <form className="max-w-sm mx-auto p-12">
                 <div className="mb-5">
